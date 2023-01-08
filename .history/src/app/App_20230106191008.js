@@ -3,13 +3,12 @@ import React from 'react';
 
 import { AllRecipes } from '../features/allRecipes/AllRecipes.js';
 import { SearchTerm } from '../features/searchTerm/SearchTerm.js';
-import { FavoriteRecipes } from '../features/favoriteRecipes/FavoriteRecipes.js';
 
 export function App(props) {
   const {state, dispatch} = props;
 
   const visibleAllRecipes = getFilteredRecipes(state.allRecipes, state.searchTerm);
-  const visibleFavoriteRecipes = getFilteredRecipes(state.favoriteRecipes, state.searchTerm);
+  // const visibleFavoriteRecipes = getFilteredRecipes(state.favoriteRecipes, state.searchTerm);
 
 // You'll add the <FavoriteRecipes /> component in the next exercise!
   return (
@@ -22,10 +21,7 @@ export function App(props) {
       </section>
       <section>
         <h2>Favorite Recipes</h2>
-        <FavoriteRecipes 
-         favoriteRecipes={visibleFavoriteRecipes}
-         dispatch={dispatch}
-        />
+        
       </section>
       <hr />
       <section>
